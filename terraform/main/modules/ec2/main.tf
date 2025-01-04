@@ -4,7 +4,7 @@ resource "aws_instance" "webserver" {
 
   key_name        = var.key_name
   subnet_id       = var.public_subnet_id
-  security_groups = [var.security_group_id]
+  vpc_security_group_ids = [var.security_group_id]
 
   # Configuração para tornar a instância acessível através do Elastic IP
   associate_public_ip_address = true
